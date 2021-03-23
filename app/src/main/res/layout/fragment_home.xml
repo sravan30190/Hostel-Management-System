@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/mainlayout"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/nameholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Hi Hari"
+        android:textSize="24dp"
+        android:fontFamily="@font/poppinsmedium"
+        />
+
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/nameholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:text="Welcome Back!"
+        android:textColor="@color/red"
+        android:textSize="28dp"
+        android:fontFamily="@font/poppinsbold"
+        />
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toBottomOf="@+id/nameholder"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="23dp">
+        <LinearLayout
+            android:background="#D6EBFA"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/permssionform"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Permission Form:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+
+                    <EditText
+                        android:id="@+id/expectedouttime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:hint="Expected Out Time"
+                        android:inputType="none" />
+
+                    <EditText
+                        android:id="@+id/expectedintime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:hint="Expected In Time"
+                        android:inputType="none" />
+
+                    <EditText
+                        android:id="@+id/reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:hint="Reason"
+                        android:inputType="text" />
+
+                    <Button
+                        android:id="@+id/permissionbutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="submit"
+
+                        />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/parentlinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Waiting for Parent Approval"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+
+                    <Button
+                        android:id="@+id/parentmsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Resend Parent Message"
+                        />
+                    <Button
+                        android:id="@+id/cancelrequestinparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Cancel Request"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/wardenlinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Parent Approved.\nWaiting for Warden Approval...."
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+                    <Button
+                        android:id="@+id/cancelrequestinwarden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Cancel Request"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/allset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Permission Granted!"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+                    <Button
+                        android:id="@+id/qr"
+                        android:layout_height="130dp"
+                        android:layout_width="match_parent"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="QR CODE"
+                        />
+                    <Button
+                        android:id="@+id/cancelrequest"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Cancel Request"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/parentDeny"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Parent Denied Permission!"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/cancelrequestpd"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Cancel Request"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/WardenDeny"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Warden Denied Permission!"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/cancelrequestwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Cancel Request"
+                        />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <ProgressBar
+        app:layout_constraintTop_toBottomOf="@+id/nameholder"
+        android:layout_marginTop="10dp"
+        android:id="@+id/progressinpermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toBottomOf="@+id/nameholder"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginRight="30dp"
+
+        android:layout_marginTop="170dp"
+
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="30dp">
+        <LinearLayout
+            android:background="#D6EBFA"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+                <Button
+                    android:background="#D6EBFA"
+                    android:textColor="@color/white"
+                   android:drawableLeft="@drawable/ic_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/refresh"
+                    />
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</LinearLayout>

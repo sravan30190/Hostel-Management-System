@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:drawableEnd="@drawable/ic_subject"
+        android:layout_marginTop="265dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/poppinsmedium"
+        android:inputType="textPersonName"
+        android:hint="Subject"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
+
+    <EditText
+        android:id="@+id/msg"
+        android:backgroundTint="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reporttext"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:drawableEnd="@drawable/ic_msg"
+
+        android:layout_marginTop="59dp"
+
+        android:layout_marginBottom="244dp"
+        android:ems="10"
+        android:fontFamily="@font/poppinsmedium"
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Message" />
+
+    <TextView
+        android:id="@+id/reporttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginTop="163dp"
+
+        android:layout_marginBottom="83dp"
+        android:text="Report"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:textColor="@color/red"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/reportbutton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="106dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/reportbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="169dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Report" />
+</RelativeLayout>
