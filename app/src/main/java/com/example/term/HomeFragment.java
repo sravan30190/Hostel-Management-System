@@ -564,7 +564,7 @@ public class HomeFragment extends Fragment {
         qr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url=c.getTid()+","+c.getPhone();
+                String url="HMS,"+c.getTid()+","+c.getPhone();
                 Bundle qrbundle=new Bundle();
                 qrbundle.putString("url",url);
                 Intent qrintent=new Intent(getActivity(),QR.class);
