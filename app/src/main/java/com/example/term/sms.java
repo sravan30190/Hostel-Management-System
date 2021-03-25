@@ -29,7 +29,7 @@ public class sms extends AppCompatActivity {
         c.setParentName(bundle.getString("parent", "Default"));
         c.setPhone(bundle.getString("phone", "Default"));
         c.setTid(bundle.getString("tid", "Default"));
-        msg="[System Generated Message]\nYour son/Daughter has applied for outing. please click on the link below to respond.\nhttp://"+i.getIp()+"/Termpaper/parent.php?tid="+c.getTid();
+        msg="Your son/Daughter has applied for outing. please click on the link below to respond.\nhttp://"+i.getIp()+"/Termpaper/parent.php?tid="+c.getTid();
         sendSMSMessage();
     }
     private void sendSMSMessage() {

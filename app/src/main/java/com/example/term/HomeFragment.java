@@ -230,6 +230,7 @@ public class HomeFragment extends Fragment {
                                                 bundle3.putString("parent", bundle.getString("parent", "Default"));
                                                 bundle3.putString("phone", bundle.getString("phone", "Default"));
                                                 bundle3.putString("tid", str[0]);
+                                                parentmsg.performClick();
 
 
                                             }
@@ -564,7 +565,7 @@ public class HomeFragment extends Fragment {
         qr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url="HMS,"+c.getTid()+","+c.getPhone();
+                String url="HMS,"+c.getTid()+","+bundle.getString("phone", "Default");
                 Bundle qrbundle=new Bundle();
                 qrbundle.putString("url",url);
                 Intent qrintent=new Intent(getActivity(),QR.class);
