@@ -72,7 +72,7 @@ public class ReportFragment extends Fragment {
                             data[0] = id;
                             data[1] = sub1;
                             data[2] = msg1;
-                            PutData putData = new PutData("http://"+i.getIp()+"/Termpaper/report.php", "POST", field, data);
+                            PutData putData = new PutData("http://"+i.getIp()+"/report.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();

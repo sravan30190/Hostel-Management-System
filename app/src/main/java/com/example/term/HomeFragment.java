@@ -122,7 +122,7 @@ public class HomeFragment extends Fragment {
                 //Creating array for data
                 String[] data = new String[1];
                 data[0] = bundle.getString("id", "Default");
-                PutData putData = new PutData("http://"+i.getIp()+"/Termpaper/token.php", "POST", field, data);
+                PutData putData = new PutData("http://"+i.getIp()+"/token.php", "POST", field, data);
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
                         String result = putData.getResult();
@@ -130,7 +130,7 @@ public class HomeFragment extends Fragment {
                         if (result.equals("success"))
                         {
 
-                            String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                            String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                             FetchData fetchData = new FetchData(url);
                             if (fetchData.startFetch()) {
                                 if (fetchData.onComplete()) {
@@ -210,7 +210,7 @@ public class HomeFragment extends Fragment {
                             data[2] = reasonstr;
                             data[3] = bundle.getString("id", "Default");
                             data[4] = bundle.getString("phone", "Default");
-                            PutData putData = new PutData("http://"+i.getIp()+"/Termpaper/permissionform.php", "POST", field, data);
+                            PutData putData = new PutData("http://"+i.getIp()+"/permissionform.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
@@ -218,7 +218,7 @@ public class HomeFragment extends Fragment {
 
                                     if(result.equals("success"))
                                     {
-                                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                                         FetchData fetchData = new FetchData(url);
                                         if (fetchData.startFetch()) {
                                             if (fetchData.onComplete()) {
@@ -271,7 +271,7 @@ public class HomeFragment extends Fragment {
                 handler3.post(new Runnable() {
                     @Override
                     public void run() {
-                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                         FetchData fetchData = new FetchData(url);
                         if (fetchData.startFetch()) {
                             if (fetchData.onComplete()) {
@@ -308,7 +308,7 @@ public class HomeFragment extends Fragment {
                 handler4.post(new Runnable() {
                     @Override
                     public void run() {
-                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                         FetchData fetchData = new FetchData(url);
                         if (fetchData.startFetch())
                         {
@@ -316,7 +316,7 @@ public class HomeFragment extends Fragment {
                                 String result1 = fetchData.getResult();
                                 String[] str = result1.split(";", 3);
 
-                                String url1="http://"+i.getIp()+"/Termpaper/cancel.php?tid="+str[0];
+                                String url1="http://"+i.getIp()+"/cancel.php?tid="+str[0];
                                 FetchData fetchData1 = new FetchData(url1);
                                 if (fetchData1.startFetch()) {
                                     if (fetchData1.onComplete()) {
@@ -364,7 +364,7 @@ public class HomeFragment extends Fragment {
                 handler4.post(new Runnable() {
                     @Override
                     public void run() {
-                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                         FetchData fetchData = new FetchData(url);
                         if (fetchData.startFetch())
                         {
@@ -372,7 +372,7 @@ public class HomeFragment extends Fragment {
                                 String result1 = fetchData.getResult();
                                 String[] str = result1.split(";", 3);
 
-                                String url1="http://"+i.getIp()+"/Termpaper/cancel.php?tid="+str[0];
+                                String url1="http://"+i.getIp()+"/cancel.php?tid="+str[0];
                                 FetchData fetchData1 = new FetchData(url1);
                                 if (fetchData1.startFetch()) {
                                     if (fetchData1.onComplete()) {
@@ -413,7 +413,7 @@ public class HomeFragment extends Fragment {
                 handler4.post(new Runnable() {
                     @Override
                     public void run() {
-                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                         FetchData fetchData = new FetchData(url);
                         if (fetchData.startFetch())
                         {
@@ -421,7 +421,7 @@ public class HomeFragment extends Fragment {
                                 String result1 = fetchData.getResult();
                                 String[] str = result1.split(";", 3);
 
-                                String url1="http://"+i.getIp()+"/Termpaper/cancel.php?tid="+str[0];
+                                String url1="http://"+i.getIp()+"/cancel.php?tid="+str[0];
                                 FetchData fetchData1 = new FetchData(url1);
                                 if (fetchData1.startFetch()) {
                                     if (fetchData1.onComplete()) {
@@ -462,7 +462,7 @@ public class HomeFragment extends Fragment {
                 handler4.post(new Runnable() {
                     @Override
                     public void run() {
-                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                         FetchData fetchData = new FetchData(url);
                         if (fetchData.startFetch())
                         {
@@ -470,7 +470,7 @@ public class HomeFragment extends Fragment {
                                 String result1 = fetchData.getResult();
                                 String[] str = result1.split(";", 3);
 
-                                String url1="http://"+i.getIp()+"/Termpaper/cancel.php?tid="+str[0];
+                                String url1="http://"+i.getIp()+"/cancel.php?tid="+str[0];
                                 FetchData fetchData1 = new FetchData(url1);
                                 if (fetchData1.startFetch()) {
                                     if (fetchData1.onComplete()) {
@@ -516,7 +516,7 @@ public class HomeFragment extends Fragment {
                 handler4.post(new Runnable() {
                     @Override
                     public void run() {
-                        String url="http://"+i.getIp()+"/Termpaper/readToken.php?id="+ bundle.getString("id", "Default");
+                        String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
                         FetchData fetchData = new FetchData(url);
                         if (fetchData.startFetch())
                         {
@@ -524,7 +524,7 @@ public class HomeFragment extends Fragment {
                                 String result1 = fetchData.getResult();
                                 String[] str = result1.split(";", 3);
 
-                                String url1="http://"+i.getIp()+"/Termpaper/cancel.php?tid="+str[0];
+                                String url1="http://"+i.getIp()+"/cancel.php?tid="+str[0];
                                 FetchData fetchData1 = new FetchData(url1);
                                 if (fetchData1.startFetch()) {
                                     if (fetchData1.onComplete()) {

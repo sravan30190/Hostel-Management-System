@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                             data[0] = username;
                             data[1] = password;
 
-                            PutData putData = new PutData("http://"+i.getIp()+"/Termpaper/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://"+i.getIp()+"/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                                     {
 
                                         cookie c=new cookie();
-                                        String url="http://"+i.getIp()+"/Termpaper/readTest.php?username="+username;
+                                        String url="http://"+i.getIp()+"/readTest.php?username="+username;
                                         FetchData fetchData = new FetchData(url);
                                         if (fetchData.startFetch()) {
                                             if (fetchData.onComplete()) {
