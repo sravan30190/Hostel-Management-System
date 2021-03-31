@@ -6,7 +6,7 @@ public class IP {
     public String getIp() {
         return ip;
     }
-    //Ram
+    //Ram Ram Setji
 
 
 }
