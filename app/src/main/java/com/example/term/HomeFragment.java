@@ -41,6 +41,7 @@ import static android.view.View.VISIBLE;
 public class HomeFragment extends Fragment {
     TextView nameholder;
     ProgressBar pro;
+    SwipeRefreshLayout pullToRefresh;
     LinearLayout permissionform,parentlinear,wardenlinear,allset,parentDeny,WardenDeny;
     EditText expectedintime,expectedouttime,reason;
     Button permissionbutton,parentmsg,cancelrequestinparent,cancelrequestinwarden,cancelrequest,qr,refresh,cancelrequestpd,cancelrequestwd;
@@ -57,11 +58,11 @@ public class HomeFragment extends Fragment {
         cookie c=new cookie();
         IP i=new IP();
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        pullToRefresh=view.findViewById(R.id.pullToRefresh);
         cancelrequestwd=view.findViewById(R.id.cancelrequestwd);
         cancelrequestpd=view.findViewById(R.id.cancelrequestpd);
         WardenDeny=view.findViewById(R.id.WardenDeny);
         parentDeny=view.findViewById(R.id.parentDeny);
-        refresh=view.findViewById(R.id.refresh);
         expectedintime=view.findViewById(R.id.expectedintime);
         expectedouttime=view.findViewById(R.id.expectedouttime);
         nameholder=view.findViewById(R.id.nameholder);
@@ -174,6 +175,90 @@ public class HomeFragment extends Fragment {
                     }
                 }
                 //End Write and Read data with URL
+            }
+        });
+
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                //---------------------------
+                permissionform.setVisibility(View.GONE);
+                parentlinear.setVisibility(View.GONE);
+                wardenlinear.setVisibility(View.GONE);
+                allset.setVisibility(View.GONE);
+                parentDeny.setVisibility(View.GONE);
+                WardenDeny.setVisibility(View.GONE);
+                //---------------------------
+                pro.setVisibility(View.VISIBLE);
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(new Runnable()
+                {
+                    @Override
+                    public void run() {
+                        //Starting Write and Read data with URL
+                        //Creating array for parameters
+                        String[] field = new String[1];
+                        field[0] = "id";
+                        //Creating array for data
+                        String[] data = new String[1];
+                        data[0] = bundle.getString("id", "Default");
+                        PutData putData = new PutData("http://"+i.getIp()+"/token.php", "POST", field, data);
+                        if (putData.startPut()) {
+                            if (putData.onComplete()) {
+                                String result = putData.getResult();
+                                //End ProgressBar (Set visibility to GONE)
+                                if (result.equals("success"))
+                                {
+
+                                    String url="http://"+i.getIp()+"/readToken.php?id="+ bundle.getString("id", "Default");
+                                    FetchData fetchData = new FetchData(url);
+                                    if (fetchData.startFetch()) {
+                                        if (fetchData.onComplete()) {
+                                            String result1 = fetchData.getResult();
+                                            String[] str = result1.split(";", 3);
+                                            c.setTid(str[0]);
+                                            if(str[1].equals("0"))
+                                            {
+                                                parentlinear.setVisibility(VISIBLE);
+                                            }
+                                            if(str[1].equals("2"))
+                                            {
+                                                parentDeny.setVisibility(VISIBLE);
+                                            }
+                                            if(str[2].equals("2"))
+                                            {
+                                                WardenDeny.setVisibility(VISIBLE);
+                                            }
+
+                                            if(str[1].equals("1") && str[2].equals("0"))
+                                            {
+                                                wardenlinear.setVisibility(VISIBLE);
+                                            }
+                                            if(str[1].equals("1") && str[2].equals("1"))
+                                            {
+                                                allset.setVisibility(VISIBLE);
+                                            }
+
+                                        }
+                                    }
+                                    pro.setVisibility(View.GONE);
+
+                                }
+                                else{
+                                    pro.setVisibility(View.GONE);
+                                    permissionform.setVisibility(View.VISIBLE);
+
+
+                                }
+
+                            }
+                        }
+                        //End Write and Read data with URL
+                    }
+                });
+                pullToRefresh.setRefreshing(false);
+
             }
         });
 
@@ -573,7 +658,7 @@ public class HomeFragment extends Fragment {
                 startActivity(qrintent);
             }
         });
-
+/*
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -583,6 +668,8 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+ */
 
 
 

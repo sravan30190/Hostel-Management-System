@@ -33,8 +33,6 @@
         app:mbn_rippleColor="#2f424242"
         app:mbn_selectedIconColor="#ffffff"
         app:mbn_shadowColor="#1f212121" />
-
-
     </LinearLayout>
 
 

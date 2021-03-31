@@ -29,6 +29,15 @@
         android:textSize="28dp"
         android:fontFamily="@font/poppinsbold"
         />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/pullToRefresh"
+    android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
         app:layout_constraintTop_toBottomOf="@+id/nameholder"
         android:layout_width="match_parent"
@@ -258,40 +267,9 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_gravity="center_horizontal"
-        />
+        /></LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        app:layout_constraintTop_toBottomOf="@+id/nameholder"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginRight="30dp"
-
-        android:layout_marginTop="170dp"
-
-        android:layout_marginBottom="30dp"
-        app:cardCornerRadius="30dp">
-        <LinearLayout
-            android:background="#D6EBFA"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
-
-                <Button
-                    android:background="#D6EBFA"
-                    android:textColor="@color/white"
-                   android:drawableLeft="@drawable/ic_refresh"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/refresh"
-                    />
-
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 
